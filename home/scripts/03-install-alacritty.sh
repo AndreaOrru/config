@@ -11,7 +11,7 @@ mkdir -p ~/dev/system && cd ~/dev/system
 git clone https://github.com/alacritty/alacritty.git && cd alacritty
 
 # Install dependencies.
-sudo apt install -y  \
+sudo apt install -y    \
     cmake              \
     pkg-config         \
     libfreetype6-dev   \
