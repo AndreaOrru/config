@@ -13,7 +13,7 @@ popd
 # Link configuration files.
 pushd config
     for dir in $(ls); do
-        stow -t ~ $dir
+        stow -R -t ~ $dir
     done
 popd
 
