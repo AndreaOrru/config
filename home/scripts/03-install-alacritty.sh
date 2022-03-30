@@ -5,6 +5,11 @@
 
 set -e
 
+# Clone the source code.
+mkdir -p ~/dev/system && cd ~/dev/system
+[ -d alacritty ] && exit 0
+git clone https://github.com/alacritty/alacritty.git && cd alacritty
+
 # Install dependencies.
 sudo apt install -y  \
     cmake              \
@@ -14,11 +19,6 @@ sudo apt install -y  \
     libxcb-xfixes0-dev \
     libxkbcommon-dev   \
     python3
-
-# Clone the source code.
-mkdir -p ~/dev/system && cd ~/dev/system
-[ -d alacritty ] && exit 0
-git clone https://github.com/alacritty/alacritty.git && cd alacritty
 
 # Build Alacritty.
 cargo build --release
