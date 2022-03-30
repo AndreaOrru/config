@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Enable hardware acceleration in Chrome.
 mkdir -p ~/.local/share/applications && cd ~/.local/share/applications
 cp /usr/share/applications/spotify.desktop .
