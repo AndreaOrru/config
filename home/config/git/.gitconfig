@@ -1,0 +1,7 @@
+[user]
+	name = Andrea Orru
+	email = andrea@orru.io
+[color]
+	ui = auto
+[pull]
+	rebase = true
