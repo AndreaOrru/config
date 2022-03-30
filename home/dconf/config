@@ -68,7 +68,8 @@ screensaver=['<Super>BackSpace']
 power-button-action='interactive'
 
 [org/gnome/shell]
-enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'TopIcons@phocean.net']
+enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'TopIcons@phocean.net', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
+
 favorite-apps=['Alacritty.desktop', 'google-chrome.desktop', 'spotify.desktop', 'org.gnome.Nautilus.desktop']
 
 [org/gnome/shell/extensions/topicons]
