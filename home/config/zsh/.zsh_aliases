@@ -4,6 +4,7 @@ alias mkdir='mkdir -p'
 
 # New commands.
 alias f='sudo updatedb && sudo locate -i'
+alias fd='fdfind'
 alias i='ipython3'
 alias open='xdg-open'
 alias t='tmux'
