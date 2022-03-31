@@ -6,7 +6,7 @@ mkdir -p ~/.fonts && cd ~/.fonts
 
 # Download Iosevka.
 if [ ! -f iosevka.ttc ]; then
-    VERSION=`curl --silent "https://api.github.com/repos/be5invis/Iosevka/releases/latest" | jq -r ".. .tag_name? // empty"`
+    VERSION=`curl --s "https://api.github.com/repos/be5invis/Iosevka/releases/latest" | jq -r ".. .tag_name? // empty"`
     PACKAGE="super-ttc-iosevka-${VERSION:1}.zip"
 
     wget -c "https://github.com/be5invis/Iosevka/releases/download/${VERSION}/${PACKAGE}"
