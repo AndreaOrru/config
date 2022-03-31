@@ -66,6 +66,7 @@ screensaver=['<Super>BackSpace']
 
 [org/gnome/settings-daemon/plugins/power]
 power-button-action='interactive'
+sleep-inactive-ac-type='nothing'
 
 [org/gnome/shell]
 enabled-extensions=['ubuntu-appindicators@ubuntu.com', 'TopIcons@phocean.net', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com']
