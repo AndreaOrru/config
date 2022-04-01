@@ -13,7 +13,7 @@ wait_for() {
 wait_for ".ssh/id_rsa"
 cp -a ~/Dropbox/.ssh ~/
 chmod 700 ~/.ssh
-chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/*
 
 # Copy GitHub keys.
 wait_for ".hub"
