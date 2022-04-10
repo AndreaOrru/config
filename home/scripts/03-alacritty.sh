@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # References:
 # - https://github.com/alacritty/alacritty/blob/master/INSTALL.md
@@ -21,6 +21,7 @@ sudo apt install -y    \
     python3
 
 # Build Alacritty.
+source ~/.cargo/env
 cargo build --release
 
 # Install term info.
