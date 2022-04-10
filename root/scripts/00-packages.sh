@@ -8,7 +8,7 @@ DEBIAN_VERSION=$(cat /etc/debian_version | cut -d '/' -f 1)
 grep "^deb " /etc/apt/sources.list | sed "s/${DEBIAN_VERSION}/testing/" | sudo tee /etc/apt/sources.list
 wget -q -O - http://emacs.secretsauce.net/key.gpg | sudo apt-key add -
 wget -q -O - https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
-echo "deb [arch=amd64] http://emacs.secretsauce.net unstable main" | sudo tee /etc/apt/sources.list.d/spotify.list
+echo "deb [arch=amd64] http://emacs.secretsauce.net unstable main" | sudo tee /etc/apt/sources.list.d/emacs.list
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 # Install packages.
