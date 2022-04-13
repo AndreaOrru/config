@@ -1,5 +1,5 @@
 # Modified commands.
-alias cat='batcat -p'
+alias cat='batcat'
 alias diff='diff --color=auto'
 alias mkdir='mkdir -p'
 

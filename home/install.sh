@@ -11,11 +11,7 @@ pushd scripts
 popd
 
 # Link configuration files.
-pushd config
-    for dir in $(ls); do
-        stow -R -t ~ $dir
-    done
-popd
+./stow/install.sh
 
 # Configure GNOME.
 ./dconf/install.sh
