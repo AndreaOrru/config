@@ -16,6 +16,8 @@ sudo apt update
 sudo apt full-upgrade
 sudo apt install -y                      \
     autojump                             \
+    autossh                              \
+    bat                                  \
     clang                                \
     clang-format                         \
     clangd                               \
@@ -34,6 +36,7 @@ sudo apt install -y                      \
     git                                  \
     git-extras                           \
     gnome-shell-extension-top-icons-plus \
+    gron                                 \
     hub                                  \
     ibus-mozc                            \
     intel-media-va-driver-non-free       \
