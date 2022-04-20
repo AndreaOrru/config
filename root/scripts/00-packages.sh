@@ -75,18 +75,16 @@ sudo apt install -y   \
     tp-smapi-dkms
 
 # Install Python packages.
-sudo pip3 install -U   \
-    pdbpp              \
-    undervolt          \
-    youtube-dl
+sudo pip3 install -U \
+    pdbpp            \
+    undervolt
 
 # Install Google Chrome.
 if [ ! -f /etc/apt/sources.list.d/google-chrome.list ]; then
     CHROME_VERSION=$(curl https://omahaproxy.appspot.com/linux)
     CHROME_PACKAGE="google-chrome-stable_${CHROME_VERSION}-1_amd64.deb"
     wget -c "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/${CHROME_PACKAGE}"
-    sudo dpkg -i "${CHROME_PACKAGE}"
-    sudo apt --fix-broken install
+    sudo dpkg -i "${CHROME_PACKAGE}" || sudo apt --fix-broken install
     rm -f "${CHROME_PACKAGE}"
 fi
 
@@ -95,8 +93,7 @@ if [ ! -f /usr/bin/dropbox ]; then
     DROPBOX_VERSION=$(curl "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=dropbox-cli" | grep "^pkgver" | cut -d "=" -f 2)
     DROPBOX_PACKAGE="dropbox_${DROPBOX_VERSION}_amd64.deb"
     wget -c -O ${DROPBOX_PACKAGE} "https://www.dropbox.com/download?dl=packages/ubuntu/${DROPBOX_PACKAGE}"
-    sudo dpkg -i "${DROPBOX_PACKAGE}"
-    sudo apt --fix-broken install
+    sudo dpkg -i "${DROPBOX_PACKAGE}" || sudo apt --fix-broken install
     rm -f "${DROPBOX_PACKAGE}"
     dropbox start -i
 fi
