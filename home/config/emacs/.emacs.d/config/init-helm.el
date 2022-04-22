@@ -17,12 +17,14 @@
   (setq helm-swoop-split-with-multiple-windows t)
   ;; Preserve syntax highlighting in Helm Swoop.
   (setq helm-swoop-speed-or-color t)
+  ;; Start Helm Swoop without pre-input.
+  (setq helm-swoop-pre-input-function (lambda () ""))
   ;; Dynamic buffer column width.
   (setq helm-buffer-max-length nil)
 
   ;; Helm substitute commands.
-  (global-set-key (kbd "C-s") 'helm-swoop-without-pre-input)
-  (global-set-key (kbd "M-s") 'helm-multi-swoop-all)
+  (global-set-key (kbd "C-s") 'helm-swoop)
+  (global-set-key (kbd "M-s") 'helm-multi-swoop-projectile)
   (global-set-key (kbd "C-x b") 'helm-mini)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
