@@ -22,7 +22,7 @@
 	hunk-header-decoration-style = none
 	line-numbers = true
 	navigate = true
-	syntax-theme = base16-256
+	syntax-theme = gruvbox-dark
 [merge]
 	conflictstyle = diff3
 [diff]
