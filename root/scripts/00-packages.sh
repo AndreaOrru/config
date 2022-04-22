@@ -97,3 +97,10 @@ if [ ! -f /usr/bin/dropbox ]; then
     rm -f "${DROPBOX_PACKAGE}"
     dropbox start -i
 fi
+
+# Install Mullvad.
+if [ ! -f /usr/bin/mullvad ]; then
+    wget -c "https://mullvad.net/download/app/deb/latest" -O mullvad.deb
+    sudo dpkg -i mullvad.deb
+    rm -f mullvad.deb
+fi
