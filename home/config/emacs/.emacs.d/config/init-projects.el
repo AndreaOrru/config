@@ -9,9 +9,19 @@
 
 ;; Use FZF for file searching.
 (require-package 'fzf)
+(after 'fzf-projectile
+  (setq fzf/args (concat fzf/args " --exact")))
+(defun my/fzf-projectile ()
+  "Starts an fzf session at the root of the current projectile project."
+  (interactive)
+  (require 'fzf)
+  (require 'projectile)
+  (fzf-with-command "fdfind --strip-cwd-prefix -H"
+                    'fzf/action-find-file
+                    (projectile-project-root)))
 
 (defun edit-dotemacs ()
-  "Open the directory of the current Emacs configuration"
+  "Open the directory of the current Emacs configuration."
   (interactive)
   (find-file (expand-file-name "config" user-emacs-directory)))
 
@@ -25,7 +35,7 @@
 
   (which-key/describe-prefix "p" "projects")
   (evil-leader/set-key "p" 'projectile-command-map)
-  (define-key projectile-command-map (kbd "f") 'fzf-projectile)
+  (define-key projectile-command-map (kbd "f") 'my/fzf-projectile)
   (define-key projectile-command-map (kbd "F") 'projectile-find-file))
 
 (provide 'init-projects)
