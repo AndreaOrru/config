@@ -53,6 +53,7 @@ sudo apt install -y                      \
     scons                                \
     silversearcher-ag                    \
     spotify-client                       \
+    sqlite3                              \
     stow                                 \
     telegram-desktop                     \
     tmux                                 \
