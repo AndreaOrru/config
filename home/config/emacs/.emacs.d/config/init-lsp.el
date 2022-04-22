@@ -11,6 +11,7 @@
    lsp-enable-snippet nil                ;; Disable Yasnippet.
    lsp-headerline-breadcrumb-enable nil  ;; Disable headerline.
    lsp-keep-workspace-alive nil          ;; Kill language server when done.
+   lsp-lens-enable nil                   ;; Disable lenses.
    lsp-ui-doc-enable nil)                ;; Disable documentation on hover.
 
   ;; Setup the LSP prefix for LSP-enabled buffers.

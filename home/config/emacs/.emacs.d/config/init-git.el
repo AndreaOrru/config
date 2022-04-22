@@ -16,6 +16,9 @@
 
 ;; Key bindings.
 (after [evil-leader init-help]
+  ;; Ensure "s" is not overridden by global map bindings.
+  (evil-define-key 'normal magit-status-mode-map "s" 'magit-stage-file)
+
   (which-key/describe-prefix "g" "git")
   (evil-leader/set-key "gb" 'magit-blame-addition)
   (evil-leader/set-key "gd" 'magit-diff-buffer-file)
