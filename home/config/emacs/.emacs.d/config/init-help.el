@@ -14,8 +14,17 @@
   (which-key-add-key-based-replacements
     (concat evil-leader/leader " " prefix) description))
 
+;; Use helm-dash for searching documentation.
+(require-package 'helm-dash)
+(setq dash-docs-enable-debugging nil)
+(setq dash-docs-docsets-path (no-littering-expand-var-file-name "docsets"))
+
 ;; Key bindings.
 (after [evil-leader init-help]
+  (which-key/describe-prefix "d" "docs")
+  (evil-leader/set-key "ds" 'helm-dash)
+  (evil-leader/set-key "dS" 'helm-dash-at-point)
+
   (which-key/describe-prefix "h" "help")
   (evil-leader/set-key "ha" 'helm-apropos)
   (evil-leader/set-key "hb" 'describe-bindings)
