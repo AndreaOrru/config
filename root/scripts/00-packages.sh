@@ -64,7 +64,8 @@ sudo apt install -y                      \
     virtualenvwrapper                    \
     xcape                                \
     xsel                                 \
-    zsh
+    zsh                                  \
+    zstd
 
 # Install TLP packages.
 sudo apt install -y   \
