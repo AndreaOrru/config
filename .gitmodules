@@ -1,6 +1,0 @@
-[submodule "home/config/zsh/.zsh/fast-syntax-highlighting"]
-	path = home/config/zsh/.zsh/fast-syntax-highlighting
-	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
-[submodule "home/config/zsh/.zsh/powerlevel10k"]
-	path = home/config/zsh/.zsh/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
