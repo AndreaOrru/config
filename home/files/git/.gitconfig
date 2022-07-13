@@ -1,0 +1,41 @@
+# Enable colors.
+[color]
+	ui = auto
+
+# Pull behavior.
+[pull]
+	rebase = true
+
+# Authentication.
+[user]
+	name = Andrea Orru
+	email = andrea@orru.io
+
+# Delta as default diff tool.
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	file-decoration-style = yellow box
+	file-style = bold yellow
+	hunk-header-decoration-style = none
+	line-numbers = true
+	navigate = true
+	syntax-theme = gruvbox-dark
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
+
+# Difftastic as alternative diff tool.
+[diff]
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[alias]
+	difft = difftool
