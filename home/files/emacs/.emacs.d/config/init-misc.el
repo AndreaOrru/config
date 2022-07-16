@@ -10,9 +10,13 @@
 (require-package 'clipetty)
 (add-hook 'after-init-hook 'global-clipetty-mode)
 
+;; Highlight TODOs, HACKs, etc.
+(require-package 'hl-todo)
+(add-hook 'after-init-hook 'global-hl-todo-mode)
+
 ;; Customize Emacs variables.
 (after 'init-evil
-  (which-key/describe-prefix "s" "search/selection/set")
+  (which-key/describe-prefix "s" "set")
   (evil-leader/set-key "sv" 'set-variable))
 
 (provide 'init-misc)

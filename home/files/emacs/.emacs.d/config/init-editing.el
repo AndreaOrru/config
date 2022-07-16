@@ -12,6 +12,9 @@
 
 (add-hook 'after-init-hook 'electric-pair-mode)   ;; Insert parens in pairs.
 (add-hook 'after-init-hook 'global-subword-mode)  ;; CamelCase words.
+
+;; Highlight the current line.
+(add-hook 'after-init-hook 'global-hl-line-mode)
 ;; Enable line numbers in programming buffers.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 

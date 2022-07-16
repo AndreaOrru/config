@@ -7,9 +7,10 @@
 (after 'evil-mc
   (setq evil-mc-enable-bar-cursor nil))
 
-;; Use C-g to undo all cursors.
+;; Use C-g to undo all cursors and highlights.
 (defun my/keyboard-quit ()
   (interactive)
+  (evil-ex-nohighlight)
   (evil-mc-undo-all-cursors)
   (evil-force-normal-state)
   (keyboard-quit))
