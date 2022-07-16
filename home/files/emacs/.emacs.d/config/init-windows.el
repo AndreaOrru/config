@@ -15,8 +15,8 @@
 
 ;; Split and switch to the new window immediately.
 (global-set-key (kbd "C-x 2")
-                #'(lambda () (interactive) (evil-window-split) (other-window 1)))
+                #'(lambda() (interactive) (evil-window-split) (other-window 1)))
 (global-set-key (kbd "C-x 3")
-                #'(lambda () (interactive) (evil-window-vsplit) (other-window 1)))
+                #'(lambda() (interactive) (evil-window-vsplit) (other-window 1)))
 
 (provide 'init-windows)
