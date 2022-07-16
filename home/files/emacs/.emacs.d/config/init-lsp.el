@@ -15,12 +15,13 @@
    lsp-headerline-breadcrumb-enable nil  ;; Disable headerline.
    lsp-keep-workspace-alive nil          ;; Kill language server when done.
    lsp-lens-enable nil                   ;; Disable lenses.
+   lsp-modeline-diagnostics-enable nil   ;; Disable LSP diagnostics counter.
    lsp-ui-doc-enable nil)                ;; Disable documentation on hover.
 
   ;; Setup the LSP prefix for LSP-enabled buffers.
   (setq lsp-keymap-prefix ",")
   (add-hook 'lsp-mode-hook
-            #'(lambda ()
+            #'(lambda()
                 (lsp-enable-which-key-integration)
                 (evil-local-set-key 'normal (kbd ",") lsp-command-map)
                 (evil-local-set-key 'visual (kbd ",") lsp-command-map)))

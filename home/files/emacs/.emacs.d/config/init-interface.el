@@ -11,7 +11,10 @@
 ;; Enable Doom modeline.
 (require-package 'doom-modeline)
 (add-hook 'after-init-hook 'doom-modeline-mode)
-(set-face-background 'mode-line-inactive "black")
+(after 'doom-modeline
+  (set-face-background 'mode-line-inactive "black")
+  (setq doom-modeline-lsp nil)
+  (setq doom-modeline-buffer-encoding nil))
 
 ;; Enable mouse in terminal.
 (xterm-mouse-mode 1)
