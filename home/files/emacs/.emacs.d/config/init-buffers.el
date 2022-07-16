@@ -11,7 +11,6 @@
   (evil-define-key 'normal global-map "s" 'helm-mini)
 
   (which-key/describe-prefix "b" "buffers")
-  (evil-leader/set-key "bb" 'helm-mini)
   (evil-leader/set-key "bd" 'kill-this-buffer))
 
 (provide 'init-buffers)
