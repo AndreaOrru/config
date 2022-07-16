@@ -41,4 +41,8 @@ FEATURE may be any one of:
 (require-package 'no-littering)
 (require 'no-littering)
 
+;; Trigger garbage collection only when idle.
+(require-package 'gcmh)
+(add-hook 'emacs-startup-hook 'gcmh-mode)
+
 (provide 'core)

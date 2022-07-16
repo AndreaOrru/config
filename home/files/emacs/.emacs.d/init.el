@@ -1,10 +1,10 @@
 ;; -*- lexical-binding: t -*-
 
-;; Initialize the core functionalities.
+;; Initialize the core features.
 (load (expand-file-name "core" user-emacs-directory))
 (defconst config-directory (expand-file-name "config" user-emacs-directory))
 
-;; Load config files.
+;; Load all config files.
 (cl-loop for file in (directory-files-recursively config-directory "\\.el$")
          do (load file))
 
