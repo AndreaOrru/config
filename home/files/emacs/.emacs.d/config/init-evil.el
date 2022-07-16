@@ -39,4 +39,10 @@
 (after 'evil
   (define-key evil-motion-state-map "gD" 'xref-find-definitions-other-window))
 
+;; Show current and total search matches in modeline.
+(require-package 'evil-anzu)
+(add-hook 'after-init-hook 'global-anzu-mode)
+(after 'evil
+  (require 'evil-anzu))
+
 (provide 'init-evil)
