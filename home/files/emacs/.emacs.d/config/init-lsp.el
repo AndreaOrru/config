@@ -5,6 +5,9 @@
 (require-package 'lsp-treemacs)
 (require-package 'helm-lsp)
 
+;; Set process output to 1 MB as recommended by LSP's docs.
+(setq read-process-output-max (* 1024 1024))
+
 (after [lsp-mode evil]
   (setq
    lsp-auto-guess-root t                 ;; Guess the project's root.

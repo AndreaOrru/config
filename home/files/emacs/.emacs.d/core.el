@@ -1,9 +1,5 @@
 ;; -*- lexical-binding: t -*-
 
-;; Performance fixes.
-(setq gc-cons-threshold (* 256 1024 1024))      ;; GC threshold = 256 MB.
-(setq read-process-output-max (* 4 1024 1024))  ;; Process output = 4 MB.
-
 ;; Setup MELPA repository and load packages.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
