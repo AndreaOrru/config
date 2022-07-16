@@ -11,16 +11,12 @@
 (after [evil-leader helm]
   (require 'helm)
   (require 'helm-swoop)
-  ;; Open Helm buffers as a popup window.
-  (setq helm-display-function 'pop-to-buffer)
-  ;; Open Helm Swoop buffers inside current window.
-  (setq helm-swoop-split-with-multiple-windows t)
-  ;; Preserve syntax highlighting in Helm Swoop.
-  (setq helm-swoop-speed-or-color t)
-  ;; Start Helm Swoop without pre-input.
-  (setq helm-swoop-pre-input-function (lambda () ""))
-  ;; Dynamic buffer column width.
-  (setq helm-buffer-max-length nil)
+  (setq
+   helm-display-function 'pop-to-buffer           ;; Open Helm buffers as a popup window.
+   helm-swoop-split-with-multiple-windows t       ;; Open Helm Swoop buffers inside current window.
+   helm-swoop-speed-or-color t                    ;; Preserve syntax highlighting in Helm Swoop.
+   helm-swoop-pre-input-function #'(lambda() "")  ;; Start Helm Swoop without pre-input.
+   helm-buffer-max-length nil)                    ;; Dynamic buffer column width.
 
   ;; Helm substitute commands.
   (global-set-key (kbd "C-s") 'helm-swoop)
