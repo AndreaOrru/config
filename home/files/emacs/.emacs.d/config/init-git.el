@@ -14,6 +14,15 @@
 (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
+;; Install git-timemachine to navigate revision history of files.
+(require-package 'git-timemachine)
+(add-hook 'git-timemachine-mode-hook 'display-line-numbers-mode)
+(after 'evil
+  (evil-define-minor-mode-key 'normal 'git-timemachine-mode
+    "c" 'git-timemachine-show-revision-fuzzy
+    "n" 'git-timemachine-show-next-revision
+    "p" 'git-timemachine-show-previous-revision))
+
 ;; Key bindings.
 (after [evil-leader init-help]
   ;; Ensure "s" is not overridden by global map bindings.
@@ -25,6 +34,7 @@
   (evil-leader/set-key "gD" 'magit-diff-working-tree)
   (evil-leader/set-key "gl" 'magit-log-all)
   (evil-leader/set-key "gs" 'magit-status)
+  (evil-leader/set-key "gt" 'git-timemachine-toggle)
 
   (evil-global-set-key 'normal (kbd "]g") 'diff-hl-next-hunk)
   (evil-global-set-key 'normal (kbd "[g") 'diff-hl-previous-hunk)
