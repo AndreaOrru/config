@@ -3,6 +3,7 @@
 (require-package 'helm)
 (require-package 'helm-ag)
 (require-package 'helm-descbinds)
+(require-package 'helm-rg)
 (require-package 'helm-swoop)
 
 (add-hook 'after-init-hook 'helm-mode)
@@ -10,9 +11,11 @@
 
 (after [evil-leader helm]
   (require 'helm)
+  (require 'helm-rg)
   (require 'helm-swoop)
   (setq
    helm-display-function 'pop-to-buffer           ;; Open Helm buffers as a popup window.
+   helm-rg-thing-at-point nil                     ;; Start helm-rg without pre-input.
    helm-swoop-split-with-multiple-windows t       ;; Open Helm Swoop buffers inside current window.
    helm-swoop-speed-or-color t                    ;; Preserve syntax highlighting in Helm Swoop.
    helm-swoop-pre-input-function #'(lambda() "")  ;; Start Helm Swoop without pre-input.
@@ -26,7 +29,8 @@
 
   ;; Helm additional commands.
   (evil-leader/set-key "SPC" 'helm-M-x)
-  (evil-leader/set-key "/" 'helm-projectile-ag)
+  (evil-leader/set-key "/" 'projectile-ripgrep)
+  (evil-leader/set-key "?" 'helm-projectile-ag)
   (evil-leader/set-key "r" 'helm-resume)
   (evil-leader/set-key "P" 'helm-show-kill-ring)
   (evil-global-set-key 'normal ",." 'helm-semantic-or-imenu)
