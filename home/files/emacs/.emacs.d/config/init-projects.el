@@ -7,27 +7,41 @@
 (after 'projectile
   (setq projectile-enable-caching t))
 
-;; Use FZF for file searching.
-(require-package 'fzf)
-(after 'fzf-projectile
-  (setq fzf/args (concat fzf/args " --exact")))
-(defun my/fzf-projectile ()
-  "Starts an fzf session at the root of the current projectile project."
-  (interactive)
-  (require 'fzf)
-  (require 'projectile)
-  (fzf-with-command "fdfind --strip-cwd-prefix -H"
-                    'fzf/action-find-file
-                    (projectile-project-root)))
+;; Enable integration with Helm.
+(require-package 'helm-projectile)
+(add-hook 'after-init-hook 'helm-projectile-on)
 
 (defun edit-dotemacs ()
   "Open the directory of the current Emacs configuration."
   (interactive)
   (find-file (expand-file-name "config" user-emacs-directory)))
 
-;; Enable integration with Helm.
-(require-package 'helm-projectile)
-(add-hook 'after-init-hook 'helm-projectile-on)
+;; Use fzf for file searching.
+(require-package 'fzf)
+(require 'fzf)
+(require 'projectile)
+
+;; Disable fuzzy finding.
+(after 'fzf-projectile
+  (setq fzf/args (concat fzf/args " --exact")))
+
+(defun my/pop-fzf-to-buffer (&rest args)
+  "Pop the fzf buffer."
+  (pop-to-buffer fzf/buffer-name))
+
+(defun my/fzf-projectile ()
+  "Starts an fzf session at the root of the current projectile project."
+  (interactive)
+  ;; Open the fzf buffer at the bottom of the screen.
+  (advice-add 'split-window-vertically :override 'ignore)  ; Don't split windows.
+  (advice-add 'switch-to-buffer :override 'ignore)         ; Don't switch to the fzf buffer.
+  (advice-add 'make-term :before 'my/fzf-projectile--pop)  ; Pop the fzf buffer instead.
+  (fzf-with-command "fdfind --strip-cwd-prefix -H"
+                    'fzf/action-find-file
+                    (projectile-project-root))
+  (advice-remove 'split-window-vertically 'ignore)
+  (advice-remove 'switch-to-buffer 'ignore)
+  (advice-remove 'make-term 'my/fzf-projectile--pop))
 
 ;; Key bindings.
 (after [evil-leader init-help projectile]

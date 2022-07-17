@@ -11,7 +11,10 @@
 (add-hook 'after-init-hook 'shackle-mode)
 ;; Open Helm buffers at the bottom of the frame.
 (after 'shackle
-  (setq shackle-rules '(("\\`\\*helm.*?\\*\\'" :regexp t :align t :size 0.4))))
+  (require 'fzf)
+  (setq shackle-rules
+        `(("\\`\\*helm.*?\\*\\'" :regexp t :align t :size 0.4)
+          (,fzf/buffer-name :align t :size 0.4))))
 
 ;; Split and switch to the new window immediately.
 (global-set-key (kbd "C-x 2")
