@@ -27,8 +27,8 @@
       mouse-wheel-scroll-amount '(           3
                                   ((shift) . 1)))
 
-(setq inhibit-startup-screen t)    ;; Disable Emacs startup screen.
-(setq ring-bell-function 'ignore)  ;; Disable audible bell.
-(fset 'yes-or-no-p 'y-or-n-p)      ;; Use Y/N instead of yes/no.
+(setq inhibit-startup-screen t)    ; Disable Emacs startup screen.
+(setq ring-bell-function 'ignore)  ; Disable audible bell.
+(fset 'yes-or-no-p 'y-or-n-p)      ; Use Y/N instead of yes/no.
 
 (provide 'init-interface)

@@ -3,8 +3,8 @@
 ;; Launch inferior shells on a lightweight shell.
 (setq shell-file-name "/bin/sh")
 
-(require-package 'auto-package-update)  ;; Utility to update packages.
-(setq disabled-command-function nil)    ;; Enable all functions.
+(require-package 'auto-package-update)  ; Utility to update packages.
+(setq disabled-command-function nil)    ; Enable all functions.
 
 ;; Make clipboard work in TTY Emacs.
 (require-package 'clipetty)

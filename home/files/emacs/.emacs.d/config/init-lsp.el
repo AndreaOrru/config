@@ -10,13 +10,13 @@
 
 (after [lsp-mode evil]
   (setq
-   lsp-auto-guess-root t                 ;; Guess the project's root.
-   lsp-enable-snippet nil                ;; Disable Yasnippet.
-   lsp-headerline-breadcrumb-enable nil  ;; Disable headerline.
-   lsp-keep-workspace-alive nil          ;; Kill language server when done.
-   lsp-lens-enable nil                   ;; Disable lenses.
-   lsp-modeline-diagnostics-enable nil   ;; Disable LSP diagnostics counter.
-   lsp-ui-doc-enable nil)                ;; Disable documentation on hover.
+   lsp-auto-guess-root t                 ; Guess the project's root.
+   lsp-enable-snippet nil                ; Disable Yasnippet.
+   lsp-headerline-breadcrumb-enable nil  ; Disable headerline.
+   lsp-keep-workspace-alive nil          ; Kill language server when done.
+   lsp-lens-enable nil                   ; Disable lenses.
+   lsp-modeline-diagnostics-enable nil   ; Disable LSP diagnostics counter.
+   lsp-ui-doc-enable nil)                ; Disable documentation on hover.
 
   ;; Setup the LSP prefix for LSP-enabled buffers.
   (setq lsp-keymap-prefix ",")

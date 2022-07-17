@@ -9,7 +9,7 @@
 ;; Enforce rules for popup windows.
 (require-package 'shackle)
 (add-hook 'after-init-hook 'shackle-mode)
-;; Open Helm buffers at the bottom of the frame.
+;; Open Helm and fzf buffers at the bottom of the frame.
 (after 'shackle
   (require 'fzf)
   (setq shackle-rules

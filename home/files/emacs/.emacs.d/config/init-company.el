@@ -4,8 +4,8 @@
 (require-package 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (after 'company
-  (setq company-show-numbers t     ;; Show numbered completions.
-        company-idle-delay 0.15))  ;; Show completions faster.
+  (setq company-show-numbers t     ; Show numbered completions.
+        company-idle-delay 0.15))  ; Show completions faster.
 
 ;; Taken from abo-abo/oremacs.
 (defun my/company-number ()

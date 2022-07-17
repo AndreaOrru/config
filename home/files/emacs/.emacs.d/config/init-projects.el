@@ -32,7 +32,7 @@
 (defun my/fzf-projectile ()
   "Starts an fzf session at the root of the current projectile project."
   (interactive)
-  ;; Open the fzf buffer at the bottom of the screen.
+  ;; Open the fzf buffer at the bottom of the frame (see init-windows.el).
   (advice-add 'split-window-vertically :override 'ignore)  ; Don't split windows.
   (advice-add 'switch-to-buffer :override 'ignore)         ; Don't switch to the fzf buffer.
   (advice-add 'make-term :before 'my/fzf-projectile--pop)  ; Pop the fzf buffer instead.

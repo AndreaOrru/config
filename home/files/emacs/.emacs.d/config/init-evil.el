@@ -18,10 +18,10 @@
 
 ;; General Evil options.
 (setq
- evil-ex-substitute-global t      ;; Substitute globally by default.
- evil-search-module 'evil-search  ;; Vim-like search with persistent highlight.
- evil-symbol-word-search t        ;; * and # search for symbols.
- evil-want-C-u-scroll t)          ;; C-u to scroll up.
+ evil-ex-substitute-global t      ; Substitute globally by default.
+ evil-search-module 'evil-search  ; Vim-like search with persistent highlight.
+ evil-symbol-word-search t        ; * and # search for symbols.
+ evil-want-C-u-scroll t)          ; C-u to scroll up.
 
 ;; Use Space as leader key.
 (require-package 'evil-leader)

@@ -2,16 +2,16 @@
 
 ;; Sane defaults.
 (setq-default
- auto-save-default nil         ;; Don't auto save files.
- column-number-mode t          ;; Show column number in modeline.
- create-lockfiles nil          ;; Don't create # lock files.
- indent-tabs-mode nil          ;; Use spaces for indentation.
- make-backup-files nil         ;; Don't create ~ backup files.
- require-final-newline 'visit  ;; Require newline at end of file.
- tab-width 4)                  ;; Show tabs as 4 spaces.
+ auto-save-default nil         ; Don't auto save files.
+ column-number-mode t          ; Show column number in modeline.
+ create-lockfiles nil          ; Don't create # lock files.
+ indent-tabs-mode nil          ; Use spaces for indentation.
+ make-backup-files nil         ; Don't create ~ backup files.
+ require-final-newline 'visit  ; Require newline at end of file.
+ tab-width 4)                  ; Show tabs as 4 spaces.
 
-(add-hook 'after-init-hook 'electric-pair-mode)   ;; Insert parens in pairs.
-(add-hook 'after-init-hook 'global-subword-mode)  ;; CamelCase words.
+(add-hook 'after-init-hook 'electric-pair-mode)   ; Insert parens in pairs.
+(add-hook 'after-init-hook 'global-subword-mode)  ; CamelCase words.
 
 ;; Highlight the current line.
 (add-hook 'after-init-hook 'global-hl-line-mode)

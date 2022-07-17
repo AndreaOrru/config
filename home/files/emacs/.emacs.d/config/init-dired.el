@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t -*-
 
-(add-hook 'dired-mode-hook 'dired-hide-details-mode)  ;; Minimal interface.
-(add-hook 'dired-mode-hook 'diff-hl-dired-mode)       ;; Git diffs.
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)  ; Minimal interface.
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)       ; Git diffs.
 
 ;; Don't open useless Dired buffers.
 (require-package 'dired-single)
