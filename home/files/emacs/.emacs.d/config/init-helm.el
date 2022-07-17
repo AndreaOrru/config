@@ -8,16 +8,6 @@
 (add-hook 'after-init-hook 'helm-mode)
 (add-hook 'after-init-hook 'helm-descbinds-mode)
 
-;; Configuration.
-(require 'helm)
-(require 'helm-swoop)
-(setq
- helm-buffer-max-length nil                     ;; Dynamic buffer column width.
- helm-display-function 'pop-to-buffer           ;; Open Helm buffers as a popup window.
- helm-swoop-pre-input-function #'(lambda() "")  ;; Start Helm Swoop without pre-input.
- helm-swoop-speed-or-color t                    ;; Preserve syntax highlighting in Helm Swoop.
- helm-swoop-split-with-multiple-windows t)      ;; Open Helm Swoop buffers inside current window.
-
 ;; Search using rg instead of ag.
 ;; Adapted from syl20bnr/spacemacs.
 (defun my/helm-projectile-rg ()
@@ -27,8 +17,16 @@
   (let ((helm-ag-base-command "rg --smart-case --no-heading --color=never --line-number"))
     (helm-do-ag (projectile-project-root))))
 
-;; Key bindings.
-(after 'evil-leader
+(after [evil-leader helm]
+  (require 'helm)
+  (require 'helm-swoop)
+  (setq
+   helm-buffer-max-length nil                     ;; Dynamic buffer column width.
+   helm-display-function 'pop-to-buffer           ;; Open Helm buffers as a popup window.
+   helm-swoop-pre-input-function #'(lambda() "")  ;; Start Helm Swoop without pre-input.
+   helm-swoop-speed-or-color t                    ;; Preserve syntax highlighting in Helm Swoop.
+   helm-swoop-split-with-multiple-windows t)      ;; Open Helm Swoop buffers inside current window.
+
   ;; Helm substitute commands.
   (global-set-key (kbd "C-s") 'helm-swoop)
   (global-set-key (kbd "M-s") 'helm-multi-swoop-projectile)
