@@ -6,61 +6,61 @@ set -e
 sudo pacman -Syu
 
 # Install hardware-specific packages.
-paru -Rns --noconfirm intel-media-driver || true
+if pacman -Q intel-media-driver &>/dev/null; then
+    paru -Rns --noconfirm intel-media-driver
+fi
 paru -S --needed --noconfirm  \
     intel-hybrid-codec-driver \
-    libva-intel-driver-hybrid
+    libva-intel-driver-hybrid \
+    libva-utils
 
 # Install terminal utils.
-paru -S --needed --noconfirm \
-    autojump                 \
-    autossh                  \
-    bat                      \
-    fd                       \
-    fzf                      \
-    grml-zsh-config          \
-    gron                     \
-    jq                       \
-    lsd                      \
-    man-db                   \
-    man-pages                \
-    neovim                   \
-    plocate                  \
-    ranger                   \
-    ripgrep                  \
-    stow                     \
-    the_silver_searcher      \
-    tmux                     \
-    tmux-plugin-manager-git  \
-    tree                     \
-    unp                      \
-    zsh
+if pacman -Q vim &>/dev/null; then
+    paru -Rns --noconfirm vim
+fi
+paru -S --needed --noconfirm     \
+    autojump                     \
+    autossh                      \
+    bat                          \
+    fd                           \
+    fzf                          \
+    jq gron                      \
+    lsd                          \
+    man-db man-pages             \
+    neovim                       \
+    plocate                      \
+    ranger atool                 \
+    ripgrep the_silver_searcher  \
+    stow                         \
+    tmux tmux-plugin-manager-git \
+    tree                         \
+    unp p7zip unrar              \
+    zsh grml-zsh-config
 
 # Install developer tools.
 paru -S --needed --noconfirm \
-    clang                    \
+    clang llvm lldb          \
     cloc                     \
-    cmake                    \
+    cmake scons              \
     difftastic               \
     emacs-nativecomp         \
     gdb                      \
-    git-delta                \
-    git-extras               \
-    hub                      \
-    scons                    \
+    git-delta git-extras hub \
+    lsof                     \
     sqlite
 
 # Install GUI resources and tools.
 paru -S --needed --noconfirm            \
     dconf-editor                        \
     gnome-shell-extension-topicons-plus \
+    gnome-themes-extra                  \
+    gvfs-mtp                            \
     ibus-mozc                           \
-    libva-utils                         \
-    noto-fonts                          \
+    noto-fonts noto-fonts-extra         \
     noto-fonts-cjk                      \
-    ttf-croscore                        \
-    ttf-crosextra                       \
-    ttf-dejavu                          \
+    poppler-data                        \
+    ttf-croscore ttf-crosextra          \
+    ttf-dejavu ttf-droid ttf-roboto     \
     ttf-iosevka-nerd                    \
     xcape                               \
     xsel
@@ -71,18 +71,20 @@ paru -S --needed --noconfirm    \
     anki-official-binary-bundle \
     dropbox                     \
     google-chrome               \
-    mpv                         \
+    mpv yt-dlp                  \
     mullvad-vpn-bin             \
-    telegram-desktop            \
     spotify                     \
-    yt-dlp
+    telegram-desktop
 
 # Install Python packages.
 paru -S --needed --noconfirm \
     ipython                  \
+    python-black             \
     python-pdbpp             \
     python-pip               \
     python-virtualenvwrapper
 
 # Uninstall Gnome Terminal.
-paru -Rns --noconfirm gnome-terminal || true
+if pacman -Q gnome-terminal &>/dev/null; then
+    paru -Rns --noconfirm gnome-terminal
+fi
