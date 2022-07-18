@@ -2,14 +2,19 @@
 
 set -e
 
+# Enable colored output and parallel downloads.
 sudo sed -i 's/^#Color$/Color/' /etc/pacman.conf
 sudo sed -i 's/^#ParallelDownloads = /ParallelDownloads = /' /etc/pacman.conf
 
+# Optimize for the native architecture when building packages.
 sudo sed -i 's/^CFLAGS="-march=x86-64 -mtune=generic /CFLAGS="-march=native /' /etc/makepkg.conf
 sudo sed -i 's/^#RUSTFLAGS="-C opt-level=2"$/RUSTFLAGS="-C opt-level=2 -C target-cpu=native"/' /etc/makepkg.conf
+# Run more compilation tasks in parallel.
 sudo sed -i 's/^#MAKEFLAGS="-j2"$/MAKEFLAGS="-j8"/' /etc/makepkg.conf
+# Don't compress packages.
 sudo sed -i "s/^PKGEXT='\.pkg\.tar\.zst'$/PKGEXT='.pkg.tar'/" /etc/makepkg.conf
 
+# Install Paru if necessary.
 if ! pacman -Q paru &>/dev/null ; then
     mkdir -p ~/dev && cd ~/dev
 
