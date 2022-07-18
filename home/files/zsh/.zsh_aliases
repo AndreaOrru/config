@@ -1,18 +1,14 @@
 # Modified commands.
-alias bat='batcat'
-alias ls='~/.cargo/bin/lsd'
+alias ls='lsd'
 alias diff='diff --color=auto'
 alias mkdir='mkdir -p'
 
 # New commands.
 alias f='sudo updatedb && sudo locate -i'
-alias fd='fdfind'
 alias i='ipython3'
 alias open='xdg-open'
+alias p='paru'
 alias t='tmux'
-
-# Apt.
-alias upgrade='sudo apt update && sudo apt full-upgrade && sudo apt autoremove && sudo apt clean'
 
 # Emacs.
 alias e='TERM=tmux-direct emacsclient -t'

@@ -36,7 +36,7 @@
   (advice-add 'split-window-vertically :override 'ignore)  ; Don't split windows.
   (advice-add 'switch-to-buffer :override 'ignore)         ; Don't switch to the fzf buffer.
   (advice-add 'make-term :before 'my/fzf-projectile--pop)  ; Pop the fzf buffer instead.
-  (fzf-with-command "fdfind --strip-cwd-prefix -H"
+  (fzf-with-command "fd --strip-cwd-prefix -H"
                     'fzf/action-find-file
                     (projectile-project-root))
   (advice-remove 'split-window-vertically 'ignore)

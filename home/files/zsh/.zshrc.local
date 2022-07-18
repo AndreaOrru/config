@@ -4,10 +4,10 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/autojump/autojump.zsh
 
 # FZF.
-source /usr/share/doc/fzf/examples/completion.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--exact'
-export FZF_DEFAULT_COMMAND='fdfind -H'
+export FZF_DEFAULT_COMMAND='fd -H'
 
 # Load aliases.
 source ~/.zsh_aliases

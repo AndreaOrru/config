@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-cd $(dirname $(readlink -f $0))
 
 wait_for() {
     echo "Waiting for Dropbox to sync..."

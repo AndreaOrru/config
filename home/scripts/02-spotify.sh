@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-cd $(dirname $(readlink -f $0))
 
 # HiDPI mode for Spotify.
 mkdir -p ~/.local/share/applications && cd ~/.local/share/applications
