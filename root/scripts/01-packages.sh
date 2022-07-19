@@ -14,6 +14,11 @@ paru -S --needed --noconfirm  \
     libva-intel-driver-hybrid \
     libva-utils
 
+# Install Arch-specific packages.
+paru -S --needed --noconfirm \
+    aurvote                  \
+    downgrade
+
 # Install terminal utils.
 if pacman -Q vim &>/dev/null; then
     paru -Rns --noconfirm vim
