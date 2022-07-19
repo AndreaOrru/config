@@ -1,5 +1,5 @@
 # Syntax highlighting.
-source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # FZF.
 source /usr/share/fzf/completion.zsh
@@ -13,5 +13,5 @@ source ~/.zsh_aliases
 # Disable grml prompt.
 prompt off
 # Enable Powerlevel10k prompt.
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

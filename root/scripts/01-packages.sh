@@ -18,24 +18,27 @@ paru -S --needed --noconfirm  \
 if pacman -Q vim &>/dev/null; then
     paru -Rns --noconfirm vim
 fi
-paru -S --needed --noconfirm     \
-    autojump                     \
-    autossh                      \
-    bat                          \
-    fd                           \
-    fzf                          \
-    jq gron                      \
-    lsd                          \
-    man-db man-pages             \
-    neovim                       \
-    plocate                      \
-    ranger atool                 \
-    ripgrep the_silver_searcher  \
-    stow                         \
-    tmux tmux-plugin-manager-git \
-    tree                         \
-    unp p7zip unrar              \
-    zsh grml-zsh-config
+paru -S --needed --noconfirm         \
+    autojump                         \
+    autossh                          \
+    bat                              \
+    fd                               \
+    fzf                              \
+    jq gron                          \
+    lsd                              \
+    man-db man-pages                 \
+    neovim                           \
+    plocate                          \
+    ranger atool                     \
+    ripgrep the_silver_searcher      \
+    stow                             \
+    tmux tmux-plugin-manager-git     \
+    tree                             \
+    unp p7zip unrar                  \
+    zsh zsh-completions              \
+    zsh-theme-powerlevel10k          \
+    zsh-fast-syntax-highlighting-git \
+    grml-zsh-config
 
 # Install developer tools.
 paru -S --needed --noconfirm \
@@ -47,6 +50,7 @@ paru -S --needed --noconfirm \
     gdb                      \
     git-delta git-extras hub \
     lsof                     \
+    rust-analyzer            \
     sqlite
 
 # Install GUI resources and tools.
