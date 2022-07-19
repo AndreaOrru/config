@@ -1,6 +1,5 @@
 # Modified commands.
-unalias lsd
-alias ls='lsd'
+alias ls='/usr/bin/lsd'
 alias diff='diff --color=auto'
 alias mkdir='mkdir -p'
 

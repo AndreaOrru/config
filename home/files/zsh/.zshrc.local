@@ -1,7 +1,5 @@
 # Syntax highlighting.
 source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# Autojump.
-source /usr/share/autojump/autojump.zsh
 
 # FZF.
 source /usr/share/fzf/completion.zsh
