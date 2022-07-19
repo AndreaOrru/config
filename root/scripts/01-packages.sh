@@ -64,7 +64,7 @@ paru -S --needed --noconfirm            \
     noto-fonts-cjk                      \
     poppler-data                        \
     ttf-croscore ttf-crosextra          \
-    ttf-dejavu ttf-droid ttf-roboto     \
+    ttf-dejavu ttf-roboto               \
     ttf-iosevka-nerd                    \
     xcape                               \
     xsel
