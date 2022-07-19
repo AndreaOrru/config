@@ -7,9 +7,8 @@ sudo sed -i 's/^#Color$/Color/' /etc/pacman.conf
 sudo sed -i 's/^#ParallelDownloads = /ParallelDownloads = /' /etc/pacman.conf
 
 # Fetch the best mirrors for Japan.
-sudo pacman -S --needed --noconfirm pacman-contrib
-curl -s "https://archlinux.org/mirrorlist/?country=JP&protocol=http&use_mirror_status=on" | \
-    sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 - | sudo tee /etc/pacman.d/mirrorlist
+sudo pacman -S --needed --noconfirm reflector
+sudo reflector --country Japan --protocol http --sort rate --save /etc/pacman.d/mirrorlist
 
 # Optimize for the native architecture when building packages.
 sudo sed -i 's/^CFLAGS="-march=x86-64 -mtune=generic /CFLAGS="-march=native /' /etc/makepkg.conf
