@@ -14,4 +14,4 @@ popd
 ./files/install.sh
 
 # Configure GNOME.
-#./dconf/install.sh
+./dconf/install.sh

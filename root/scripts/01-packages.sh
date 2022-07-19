@@ -29,6 +29,7 @@ paru -S --needed --noconfirm         \
     bat                              \
     fd                               \
     fzf                              \
+    htop lsof                        \
     jq gron                          \
     lsd                              \
     man-db man-pages                 \
@@ -47,14 +48,13 @@ paru -S --needed --noconfirm         \
 
 # Install developer tools.
 paru -S --needed --noconfirm \
-    clang llvm lldb          \
+    clang llvm               \
     cloc                     \
     cmake scons              \
     difftastic               \
     emacs-nativecomp         \
-    gdb                      \
+    gdb lldb                 \
     git-delta git-extras hub \
-    lsof                     \
     rust-analyzer            \
     sqlite
 
@@ -79,11 +79,13 @@ paru -S --needed --noconfirm    \
     alacritty                   \
     anki-official-binary-bundle \
     dropbox                     \
+    gimp                        \
     google-chrome               \
     mpv yt-dlp                  \
     mullvad-vpn-bin             \
-    spotify                     \
-    telegram-desktop
+    spotify playerctl           \
+    telegram-desktop            \
+    transmission-gtk
 
 # Install Python packages.
 paru -S --needed --noconfirm \

@@ -1,6 +1,6 @@
 [org/gnome/desktop/input-sources]
 sources=[('xkb', 'us'), ('ibus', 'mozc-jp'), ('xkb', 'it')]
-xkb-options=['altwin:swap_lalt_lwin', 'caps:ctrl_modifier']
+xkb-options=['altwin:swap_lalt_lwin', 'ctrl:nocaps']
 
 [org/gnome/desktop/peripherals/keyboard]
 delay=uint32 200

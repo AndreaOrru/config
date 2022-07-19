@@ -20,7 +20,7 @@ sudo sed -i "s/^PKGEXT='\.pkg\.tar\.zst'$/PKGEXT='.pkg.tar'/" /etc/makepkg.conf
 
 # Install Paru if necessary.
 if ! pacman -Q paru &>/dev/null ; then
-    mkdir -p ~/dev && cd ~/dev
+    mkdir -p ~/dev/system && cd ~/dev/system
 
     rm -rf paru
     git clone https://aur.archlinux.org/paru.git
