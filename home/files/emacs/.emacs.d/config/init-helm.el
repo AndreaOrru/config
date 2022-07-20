@@ -21,11 +21,11 @@
   (require 'helm)
   (require 'helm-swoop)
   (setq
-   helm-buffer-max-length nil                     ; Dynamic buffer column width.
-   helm-display-function 'pop-to-buffer           ; Open Helm buffers as a popup window.
-   helm-swoop-pre-input-function #'(lambda() "")  ; Start Helm Swoop without pre-input.
-   helm-swoop-speed-or-color t                    ; Preserve syntax highlighting in Helm Swoop.
-   helm-swoop-split-with-multiple-windows t)      ; Open Helm Swoop buffers inside current window.
+   helm-buffer-max-length nil                        ; Dynamic buffer column width.
+   helm-display-function 'pop-to-buffer              ; Open Helm buffers at the bottom.
+   helm-swoop-pre-input-function #'(lambda() "")     ; Start Helm Swoop without pre-input.
+   helm-swoop-speed-or-color t                       ; Preserve highlighting in Helm Swoop.
+   helm-swoop-split-window-function 'pop-to-buffer)  ; Open Helm Swoop at the bottom.
 
   ;; Helm substitute commands.
   (global-set-key (kbd "C-s") 'helm-swoop)

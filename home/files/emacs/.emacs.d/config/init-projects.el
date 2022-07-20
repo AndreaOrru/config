@@ -35,13 +35,13 @@
   ;; Open the fzf buffer at the bottom of the frame (see init-windows.el).
   (advice-add 'split-window-vertically :override 'ignore)  ; Don't split windows.
   (advice-add 'switch-to-buffer :override 'ignore)         ; Don't switch to the fzf buffer.
-  (advice-add 'make-term :before 'my/fzf-projectile--pop)  ; Pop the fzf buffer instead.
+  (advice-add 'make-term :before 'my/pop-fzf-to-buffer)    ; Pop the fzf buffer instead.
   (fzf-with-command "fd --strip-cwd-prefix -H"
                     'fzf/action-find-file
                     (projectile-project-root))
   (advice-remove 'split-window-vertically 'ignore)
   (advice-remove 'switch-to-buffer 'ignore)
-  (advice-remove 'make-term 'my/fzf-projectile--pop))
+  (advice-remove 'make-term 'my/pop-fzf-to-buffer))
 
 ;; Key bindings.
 (after [evil-leader init-help projectile]
