@@ -10,6 +10,7 @@ if pacman -Q intel-media-driver &>/dev/null; then
     paru -Rns --noconfirm intel-media-driver libva-intel-driver
 fi
 paru -S --needed --noconfirm  \
+    bluez bluez-utils         \
     intel-hybrid-codec-driver \
     libva-intel-driver-hybrid \
     libva-utils
@@ -80,6 +81,7 @@ paru -S --needed --noconfirm    \
     alacritty                   \
     anki-official-binary-bundle \
     dropbox                     \
+    firefox                     \
     gimp                        \
     google-chrome               \
     mpv yt-dlp                  \
