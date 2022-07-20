@@ -4,7 +4,7 @@ set -e
 
 # Install Rust using Rustup.
 if [ ! -d ~/.rustup ]; then
-    if pacman -Q rust &>/dev/null; then
+    if [ "$(pacman -Qq rust)" == "rust" ]; then
         paru -Rnsdd --noconfirm rust
     fi
     paru -S --needed --noconfirm rustup
