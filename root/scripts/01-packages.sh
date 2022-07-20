@@ -60,6 +60,9 @@ paru -S --needed --noconfirm \
     sqlite
 
 # Install GUI resources and tools.
+if pacman -Q epiphany &>/dev/null; then
+    paru -Rns --noconfirm epiphany gnome-user-docs yelp
+fi
 paru -S --needed --noconfirm            \
     dconf-editor                        \
     gnome-shell-extension-appindicator  \
