@@ -3,5 +3,5 @@
 set -e
 
 if [ ! -d ~/.dropbox ]; then
-    dropbox start -i &
+    BROWSER=firefox dropbox start -i &
 fi
