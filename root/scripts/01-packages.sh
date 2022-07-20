@@ -73,7 +73,7 @@ paru -S --needed --noconfirm            \
     gnome-shell-extension-topicons-plus \
     gnome-themes-extra                  \
     gvfs-mtp                            \
-    ibus-mozc                           \
+    fcitx5-im fcitx5-mozc               \
     noto-fonts noto-fonts-extra         \
     noto-fonts-cjk                      \
     poppler-data                        \
