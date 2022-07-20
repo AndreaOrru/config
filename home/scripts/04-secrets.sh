@@ -4,7 +4,7 @@ set -e
 
 wait_for() {
     echo "Waiting for Dropbox to sync..."
-    until [ ! -f "~/Dropbox/$1" ]; do
+    until [ -f "$HOME/Dropbox/$1" ]; do
         sleep 1
     done
 }
