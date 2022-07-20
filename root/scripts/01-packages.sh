@@ -43,6 +43,7 @@ paru -S --needed --noconfirm         \
     stow                             \
     tmux tmux-plugin-manager-git     \
     tree                             \
+    ufw ufw-extras                   \
     unp p7zip unrar                  \
     zsh zsh-completions              \
     zsh-theme-powerlevel10k          \
