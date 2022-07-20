@@ -19,7 +19,8 @@ paru -S --needed --noconfirm  \
 # Install Arch-specific packages.
 paru -S --needed --noconfirm \
     aurvote                  \
-    downgrade
+    downgrade                \
+    pkg_scripts
 
 # Install terminal utils.
 if pacman -Q vim &>/dev/null; then
@@ -57,6 +58,7 @@ paru -S --needed --noconfirm \
     emacs-nativecomp         \
     gdb lldb                 \
     git-delta git-extras hub \
+    ngrok                    \
     rust-analyzer            \
     sqlite
 
