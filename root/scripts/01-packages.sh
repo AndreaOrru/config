@@ -7,7 +7,7 @@ sudo pacman -Syu
 
 # Install hardware-specific packages.
 if pacman -Q intel-media-driver &>/dev/null; then
-    paru -Rns --noconfirm intel-media-driver
+    paru -Rns --noconfirm intel-media-driver libva-intel-driver
 fi
 paru -S --needed --noconfirm  \
     intel-hybrid-codec-driver \
@@ -61,6 +61,7 @@ paru -S --needed --noconfirm \
 # Install GUI resources and tools.
 paru -S --needed --noconfirm            \
     dconf-editor                        \
+    gnome-shell-extension-appindicator  \
     gnome-shell-extension-topicons-plus \
     gnome-themes-extra                  \
     gvfs-mtp                            \
