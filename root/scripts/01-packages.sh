@@ -12,6 +12,7 @@ fi
 paru -S --needed --noconfirm  \
     bluez bluez-utils         \
     intel-hybrid-codec-driver \
+    intel-undervolt           \
     libva-intel-driver-hybrid \
     libva-utils
 
