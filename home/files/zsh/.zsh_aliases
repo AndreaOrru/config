@@ -9,6 +9,7 @@ alias i='ipython3'
 alias open='xdg-open'
 alias p='paru'
 alias t='tmux'
+alias ta='tmux attach'
 
 # Emacs.
 alias e='TERM=tmux-direct emacsclient -t'
