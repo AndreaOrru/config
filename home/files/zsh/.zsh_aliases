@@ -19,3 +19,6 @@ alias "e."='e . ..'
 alias git='hub'
 alias gpush="git push -u origin \`git rev-parse --abbrev-ref HEAD\`"
 alias 'g..'='cd $(git root)'
+
+# Monitor control.
+alias workpc='sudo modprobe i2c-dev && sudo ddcutil setvcp 0x60 0x31'

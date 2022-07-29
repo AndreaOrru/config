@@ -11,6 +11,7 @@ if pacman -Q intel-media-driver &>/dev/null; then
 fi
 paru -S --needed --noconfirm  \
     bluez bluez-utils         \
+    ddcutil                   \
     intel-hybrid-codec-driver \
     intel-undervolt           \
     libva-intel-driver-hybrid \
