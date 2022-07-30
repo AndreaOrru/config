@@ -88,12 +88,14 @@ paru -S --needed --noconfirm            \
 paru -S --needed --noconfirm    \
     alacritty                   \
     anki-official-binary-bundle \
+    discord-canary              \
     dropbox                     \
     firefox                     \
     gimp                        \
     google-chrome               \
     mpv yt-dlp                  \
     mullvad-vpn-bin             \
+    skypeforlinux-preview-bin   \
     spotify playerctl           \
     telegram-desktop            \
     transmission-gtk
