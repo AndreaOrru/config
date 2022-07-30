@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ROOT=`git root`
+sed -i 's#https://github\.com/\(\w\w*\)/\(\w\w*\)/\{0,1\}#git@github.com:\1/\2.git#' "${ROOT}/.git/config"
