@@ -7,6 +7,21 @@ source /usr/share/fzf/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--exact'
 export FZF_DEFAULT_COMMAND='fd -H'
 
+# Automatically activate/deactivate Python virtualenvs.
+source /usr/bin/virtualenvwrapper_lazy.sh
+precmd_functions=(auto_py_venv $precmd_functions)
+function auto_py_venv() {
+    # Activate virtualenv if not already active for this project.
+    if [ "${PWD}" != "${PY_VENV_ROOT}" ] && [ -f .workon ]; then
+        workon "$(cat .workon)"
+        PY_VENV_ROOT="${PWD}"
+    # Deactivate virtualenv when exiting the project root's directory or its children.
+    elif [ ! -z "${PY_VENV_ROOT}" ] && [[ "${PWD}/" != "${PY_VENV_ROOT}/"* ]]; then
+        unset PY_VENV_ROOT
+        deactivate
+    fi
+}
+
 # Load aliases.
 source ~/.zsh_aliases
 
