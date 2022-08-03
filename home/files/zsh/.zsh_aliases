@@ -11,6 +11,10 @@ alias p='paru'
 alias t='tmux'
 alias ta='tmux attach'
 
+# Arch things.
+alias upgrade='p -Syu && p -Scc --noconfirm && rm -rf ~/.cache/paru'
+alias depclean='p -Qdttq | xargs -p paru -Rns --noconfirm'
+
 # Emacs.
 alias e='TERM=tmux-direct emacsclient -t'
 alias "e."='e . ..'
