@@ -19,7 +19,7 @@ paru -S --needed --noconfirm  \
 
 # Install Arch-specific packages.
 paru -S --needed --noconfirm \
-    aurvote                  \
+    aur-auto-vote-git        \
     downgrade                \
     pkg_scripts
 
@@ -99,6 +99,13 @@ paru -S --needed --noconfirm    \
     spotify playerctl           \
     telegram-desktop            \
     transmission-gtk
+
+# Install ROM hacking tools.
+paru -S --needed --noconfirm \
+    asar-git                 \
+    bass-git                 \
+    bsnes-plus-git           \
+    snes9x-gtk
 
 # Install Python packages.
 paru -S --needed --noconfirm \
