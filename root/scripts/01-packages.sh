@@ -109,10 +109,14 @@ paru -S --needed --noconfirm \
 
 # Install Python packages.
 paru -S --needed --noconfirm \
+    flake8                   \
     ipython                  \
     python-black             \
+    python-lsp-black         \
+    python-lsp-server        \
     python-pdbpp             \
     python-pip               \
+    python-pyls-isort        \
     python-virtualenvwrapper
 
 # Uninstall Gnome Terminal.

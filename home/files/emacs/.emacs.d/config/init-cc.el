@@ -7,8 +7,9 @@
               (add-hook 'before-save-hook 'lsp-format-buffer t t)))
 
 ;; Enable C++ dash docset.
-(add-hook 'c++-mode-hook
-          #'(lambda() (dash-docs-activate-docset "C++")))
+(after 'init-help
+  (add-hook 'c++-mode-hook
+            #'(lambda() (dash-docs-activate-docset "C++"))))
 
 ;; Key bindings.
 (after 'evil-leader
